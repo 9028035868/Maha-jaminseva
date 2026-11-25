@@ -1,51 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="mr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f97316">
 <title>महा संचिका सेवा</title>
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#f1f7f2;color:#173b28}
-header{background:#146b43;color:white;text-align:center;padding:25px 10px}
-h1{margin:5px;font-size:27px}
-main{padding:15px}
-h2{text-align:center;color:#146b43}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-a{background:white;padding:18px 8px;text-align:center;
-border-radius:12px;text-decoration:none;color:#145b39;
-font-weight:bold;box-shadow:0 2px 7px #ccc}
-a:active{background:#d9f0df}
-footer{text-align:center;padding:20px;font-size:13px}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#fff7ed;color:#3b2415}
+header{background:linear-gradient(135deg,#f97316,#c2410c);color:white;text-align:center;padding:28px 14px}
+header h1{margin:0;font-size:28px}
+header p{margin:8px 0 0}
+main{max-width:900px;margin:auto;padding:18px 14px 28px}
+h2{text-align:center;color:#9a3412}
+.section-title{color:#9a3412;font-size:18px;margin:24px 2px 12px;border-left:5px solid #f97316;padding-left:10px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.service{display:flex;align-items:center;gap:10px;min-height:76px;background:#fff;border:1px solid #fed7aa;border-radius:14px;padding:14px 12px;text-decoration:none;color:#7c2d12;font-weight:bold;box-shadow:0 3px 10px #7c2d1214}
+.service:active{background:#ffedd5}
+.icon{width:38px;height:38px;flex:0 0 38px;border-radius:11px;background:#ffedd5;display:grid;place-items:center;font-size:21px}
+.name{font-size:14px;line-height:1.45}
+.note{background:#fff;border:1px solid #fed7aa;border-radius:12px;padding:13px;margin-top:22px;font-size:13px;line-height:1.6}
+footer{text-align:center;padding:18px 12px;background:#7c2d12;color:#ffedd5;font-size:12px}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 </style>
 </head>
 <body>
 <header>
 <h1>महा संचिका सेवा</h1>
-<p>महाराष्ट्रातील जमीन कागदपत्र सेवा</p>
+<p>महाराष्ट्रातील नागरिकांसाठी जमीन, आधार व शासकीय सेवा</p>
 </header>
 <main>
-<h2>आपली जमीन सेवा निवडा</h2>
+<h2>आपली सेवा निवडा</h2>
+<div class="section-title">जमीन व महसूल सेवा</div>
 <div class="grid">
-<a href="https://mahabhumi.gov.in/">डिजिटल ७/१२</a>
-<a href="https://mahabhumi.gov.in/">८-अ उतारा</a>
-<a href="https://igrmaharashtra.gov.in/">खरेदीखत / रजिस्ट्री नक्कल</a>
-<a href="https://mahabhumi.gov.in/">खसरा पत्रक</a>
-<a href="https://mahabhumi.gov.in/">K-प्रत (क प्रत)</a>
-<a href="https://mahabhumi.gov.in/">सीलिंग जमीन वाटप पत्र</a>
-<a href="https://mahabhumi.gov.in/">जुने जमीन कागदपत्र</a>
-<a href="https://mahabhumi.gov.in/">ई-फेरफार</a>
-<a href="https://mahabhumi.gov.in/">ई-चावडी</a>
-<a href="https://mahabhunakasha.mahabhumi.gov.in/">गाव नकाशा</a>
-<a href="https://mahabhunakasha.mahabhumi.gov.in/">जमीन नकाशा</a>
-<a href="https://mahabhumi.gov.in/">गट नंबर शोध</a>
-<a href="https://mahabhumi.gov.in/">जमीन मोजणी</a>
-<a href="https://mahabhumi.gov.in/">अर्जाची स्थिती</a>
+<a class="service" href="https://mahabhumi.gov.in/" target="_blank" rel="noopener"><span class="icon">📄</span><span class="name">नवीन व जुने डिजिटल ७/१२ आणि ८-अ</span></a>
+<a class="service" href="https://aaplichawdi.mahabhumi.gov.in/" target="_blank" rel="noopener"><span class="icon">🏛️</span><span class="name">आपली चावडी</span></a>
+<a class="service" href="https://mahabhunakasha.mahabhumi.gov.in/" target="_blank" rel="noopener"><span class="icon">🗺️</span><span class="name">मिळकत भू-नकाशा ऑनलाइन पहा</span></a>
+<a class="service" href="https://mahabhunakasha.mahabhumi.gov.in/" target="_blank" rel="noopener"><span class="icon">🌐</span><span class="name">मिळकत गावाचा नकाशा</span></a>
+<a class="service" href="https://igrmaharashtra.gov.in/" target="_blank" rel="noopener"><span class="icon">📑</span><span class="name">नोंदणी – सूची क्रमांक २</span></a>
+<a class="service" href="https://dtp.maharashtra.gov.in/" target="_blank" rel="noopener"><span class="icon">🏗️</span><span class="name">डेव्हलपमेंट प्लान</span></a>
+<a class="service" href="https://igrmaharashtra.gov.in/" target="_blank" rel="noopener"><span class="icon">🧾</span><span class="name">नोंदणीकृत दस्तऐवज प्रत</span></a>
+<a class="service" href="https://mahabhumi.gov.in/" target="_blank" rel="noopener"><span class="icon">🏠</span><span class="name">मालमत्ता पत्रक</span></a>
 </div>
+<div class="section-title">आधार सेवा</div>
+<div class="grid">
+<a class="service" href="https://myaadhaar.uidai.gov.in/" target="_blank" rel="noopener"><span class="icon">🪪</span><span class="name">आधार डाउनलोड</span></a>
+<a class="service" href="https://myaadhaar.uidai.gov.in/verifyAadhaar" target="_blank" rel="noopener"><span class="icon">✅</span><span class="name">आधारची वैधता तपासणे</span></a>
+</div>
+<div class="section-title">इतर नागरिक सेवा</div>
+<div class="grid">
+<a class="service" href="https://pensionersportal.gov.in/" target="_blank" rel="noopener"><span class="icon">🏦</span><span class="name">बँक / पेन्शन स्थिती</span></a>
+<a class="service" href="https://mahafood.gov.in/" target="_blank" rel="noopener"><span class="icon">🍚</span><span class="name">मेरा राशन कार्ड</span></a>
+</div>
+<div class="note">सूचना: ही वेबसाइट शासकीय सेवांसाठी मार्गदर्शन व अधिकृत पोर्टलच्या लिंक उपलब्ध करून देते. आधार डाउनलोड व वैधता तपासणी UIDAI च्या अधिकृत पोर्टलवरच करा. आधार क्रमांक, OTP किंवा बायोमेट्रिक माहिती या वेबसाइटवर साठवली जात नाही. काही सेवा वापरण्यासाठी संबंधित सरकारी पोर्टलवर लॉगिन आवश्यक असू शकते.</div>
 </main>
-<footer>
-<p>महा संचिका सेवा</p>
-<p>ही माहिती व मार्गदर्शनासाठीची सेवा आहे. प्रमाणित कागदपत्रांसाठी सरकारी कार्यालय किंवा अधिकृत पोर्टल वापरा.</p>
-</footer>
+<footer><strong>महा संचिका सेवा</strong><br>नागरिकांसाठी डिजिटल सेवा मार्गदर्शन</footer>
 </body>
 </html>
