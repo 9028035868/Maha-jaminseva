@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#087443"><title>महा संचिका सेवा</title>
+<style>
+:root{--g:#087443;--g2:#0b9657;--bg:#f2f7f3;--ink:#17352a;--muted:#688075}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,"Noto Sans Devanagari",sans-serif;color:var(--ink)}
+header{background:linear-gradient(130deg,#075c38,#0b9657);color:white;padding:22px 18px 26px;border-radius:0 0 25px 25px}
+.top{display:flex;justify-content:space-between;align-items:center}.brand{font-weight:800;font-size:20px}.sub{font-size:12px;opacity:.85;margin-top:3px}
+.pill{border:1px solid #ffffff66;border-radius:30px;padding:7px 11px;font-size:12px}
+.hero{margin-top:22px;font-size:23px;font-weight:800;line-height:1.35}.hero small{display:block;font-size:13px;font-weight:400;opacity:.9;margin-top:6px}
+main{max-width:680px;margin:auto;padding:16px 14px 88px}.section{display:flex;justify-content:space-between;align-items:center;margin:20px 2px 12px;font-weight:800}.section small{color:var(--g);font-weight:600}
+.search{background:white;border:1px solid #e0ebe3;border-radius:15px;padding:13px;display:flex;gap:8px;box-shadow:0 4px 16px #17352a0a}
+.search input{border:0;outline:0;min-width:0;flex:1;font:inherit}.search button,.primary{background:var(--g);color:white;border:0;border-radius:11px;padding:11px 15px;font:inherit;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.tile{background:white;border:1px solid #e3eee6;border-radius:15px;padding:14px 7px;text-align:center;min-height:103px;box-shadow:0 3px 12px #17352a08}
+.ico{font-size:26px;display:block;margin-bottom:7px}.tile b{font-size:12px}
+.panel{background:white;border:1px solid #e3eee6;border-radius:16px;padding:15px;margin-top:12px}
+.row{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid #edf2ee}
+.row:last-child{border:0}.note{font-size:12px;color:var(--muted);line-height:1.6}
+.screen{display:none}.screen.active{display:block}.back{border:0;background:none;color:var(--g);font:inherit;font-weight:700;padding:8px 0}
+label{font-size:13px;font-weight:700;display:block;margin:12px 0 5px}
+select,input{width:100%;padding:12px;border:1px solid #d9e6dc;border-radius:10px;background:#fff;font:inherit}
+nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e2ebe4;display:flex;justify-content:space-around;padding:9px 3px calc(9px + env(safe-area-inset-bottom));z-index:5}
+nav button{border:0;background:none;color:#718278;font:inherit;font-size:11px}
+nav button strong{display:block;font-size:20px}nav button.sel{color:var(--g);font-weight:800}
+button{cursor:pointer}.result{display:none;background:#fff8e7;border:1px solid #f1d99a;padding:12px;border-radius:12px;margin-top:12px;font-size:13px}
+@media(min-width:560px){header{padding-left:max(18px,calc((100% - 650px)/2));padding-right:max(18px,calc((100% - 650px)/2))}}
+</style></head>
+<body>
+<header><div class="top"><div><div class="brand">🌿 महा संचिका सेवा</div><div class="sub">डिजिटल ७/१२ • जमीन अभिलेख सुविधा</div></div><div class="pill">मराठी</div></div><div class="hero">तुमची जमीन, तुमच्या हातात!<small>जमीन अभिलेख आणि नागरिक सेवांसाठी एकाच ठिकाणी प्रवेश</small></div></header>
+<main>
+<section id="home" class="screen active">
+<div class="section">सेवा शोधा <small>सर्व सेवा →</small></div>
+<div class="search"><input id="quick" placeholder="उदा. ७/१२, ८-अ, फेरफार"><button onclick="searchQuick()">शोधा</button></div>
+<div class="section">प्रमुख जमीन सेवा</div>
+<div class="grid">
+<div class="tile" onclick="openService('डिजिटल ७/१२ उतारा')"><span class="ico">📄</span><b>डिजिटल ७/१२</b></div>
+<div class="tile" onclick="openService('८-अ उतारा')"><span class="ico">🗂️</span><b>८-अ उतारा</b></div>
+<div class="tile" onclick="openService('फेरफार उतारा')"><span class="ico">🔁</span><b>फेरफार उतारा</b></div>
+<div class="tile" onclick="openService('गाव नकाशा')"><span class="ico">🗺️</span><b>गाव नकाशा</b></div>
+<div class="tile" onclick="openService('गट नंबर शोध')"><span class="ico">🔎</span><b>गट नंबर शोध</b></div>
+<div class="tile" onclick="openService('जमीन मोजणी')"><span class="ico">📐</span><b>जमीन मोजणी</b></div>
+</div>
+<div class="section">इतर महत्त्वाच्या सेवा</div><div class="panel">
+<div class="row" onclick="openService('खरेदीखत / रजिस्ट्री प्रत')">🏛️ खरेदीखत / रजिस्ट्री प्रत <span>›</span></div>
+<div class="row" onclick="openService('जुने जमीन अभिलेख')">📚 जुने जमीन अभिलेख <span>›</span></div>
+<div class="row" onclick="openService('सीलिंग जमीन वाटप पत्र')">📑 सीलिंग जमीन वाटप पत्र <span>›</span></div>
+<div class="row" onclick="openService('अर्जाची स्थिती')">📋 अर्जाची स्थिती <span>›</span></div>
+</div>
+<div class="panel"><b>ℹ️ महत्त्वाची सूचना</b><p class="note">ही प्रारंभिक डेमो आवृत्ती आहे. प्रत्यक्ष सरकारी उतारे मिळवण्यासाठी अधिकृत शासन पोर्टल/API आणि आवश्यक परवानग्या जोडणे बाकी आहे. ही आवृत्ती बनावट सरकारी कागदपत्र तयार करत नाही.</p></div>
+</section>
+<section id="services" class="screen"><button class="back" onclick="go('home')">← मुख्यपृष्ठ</button><div class="section">सर्व सेवा</div><div class="grid" id="alltiles"></div></section>
+<section id="lookup" class="screen"><button class="back" onclick="go('home')">← मुख्यपृष्ठ</button><div class="section" id="lookupTitle">डिजिटल ७/१२ शोध</div><div class="panel">
+<label>जिल्हा</label><select><option>जिल्हा निवडा</option><option>छत्रपती संभाजीनगर</option><option>पुणे</option><option>नाशिक</option><option>नागपूर</option></select>
+<label>तालुका</label><input placeholder="तालुक्याचे नाव">
+<label>गाव</label><input placeholder="गावाचे नाव">
+<label>गट / सर्वे नंबर</label><input id="gat" placeholder="गट नंबर टाका">
+<button class="primary" style="width:100%;margin-top:16px" onclick="showNotice()">शोधा</button>
+<div class="result" id="notice">सरकारी अभिलेख शोधण्यासाठी अधिकृत महाराष्ट्र जमीन अभिलेख सेवेशी जोडणी आवश्यक आहे. सध्या ही स्क्रीन डेमो स्वरूपात आहे.</div>
+</div></section>
+<section id="applications" class="screen"><div class="section">माझे अर्ज</div><div class="panel"><p>📋 अर्जाची स्थिती तपासण्यासाठी अर्ज क्रमांक टाका.</p><input placeholder="अर्ज क्रमांक"><button class="primary" style="width:100%;margin-top:12px" onclick="alert('अर्ज स्थिती सेवा जोडणी बाकी आहे.')">स्थिती तपासा</button></div></section>
+<section id="profile" class="screen"><div class="section">माहिती व मदत</div><div class="panel"><div class="row">👤 नागरिक प्रोफाइल <span>›</span></div><div class="row">❓ वारंवार विचारले जाणारे प्रश्न <span>›</span></div><div class="row">☎️ मदत केंद्र <span>›</span></div><div class="row">🔒 गोपनीयता धोरण <span>›</span></div></div><p class="note">महा संचिका सेवा — नागरिकांसाठी जमीन अभिलेख सेवा एकत्र आणण्याचा उपक्रम.</p></section>
+</main>
+<nav><button class="sel" data-tab="home" onclick="go('home',this)"><strong>⌂</strong>मुख्यपृष्ठ</button><button data-tab="services" onclick="go('services',this)"><strong>▦</strong>सेवा</button><button data-tab="applications" onclick="go('applications',this)"><strong>▤</strong>माझे अर्ज</button><button data-tab="profile" onclick="go('profile',this)"><strong>☻</strong>माहिती</button></nav>
+<script>
+const services=['डिजिटल ७/१२ उतारा','८-अ उतारा','फेरफार उतारा','गाव नकाशा','गट नंबर शोध','जमीन मोजणी','खरेदीखत / रजिस्ट्री प्रत','जुने जमीन अभिलेख','सीलिंग जमीन वाटप पत्र','खाते उतारा','ई-चावडी','अर्जाची स्थिती'];
+function go(id,btn){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('nav button').forEach(x=>x.classList.remove('sel'));if(btn)btn.classList.add('sel');else{let b=document.querySelector('nav [data-tab="'+id+'"]');if(b)b.classList.add('sel')}}
+function openService(name){document.getElementById('lookupTitle').textContent=name;document.getElementById('notice').style.display='none';go('lookup')}
+function showNotice(){document.getElementById('notice').style.display='block'}
+function searchQuick(){let q=document.getElementById('quick').value.trim();if(!q)return;let found=services.find(s=>s.includes(q));openService(found||q)}
+document.getElementById('alltiles').innerHTML=services.map((s,i)=>'<div class="tile" onclick="openService('+JSON.stringify(s)+')"><span class="ico">'+['📄','🗂️','🔁','🗺️','🔎','📐','🏛️','📚','📑','📋','🏢','🔍'][i]+'</span><b>'+s+'</b></div>').join('');
+</script></body></html>
